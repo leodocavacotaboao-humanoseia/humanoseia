@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   );
 
   const result = await streamText({
-    model: geminiProModel,
+    model: geminiFlashModel,
     system: `\n
         
         - today's date is ${new Date().toLocaleDateString()}.
