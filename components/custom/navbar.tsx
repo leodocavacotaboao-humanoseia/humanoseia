@@ -24,7 +24,7 @@ export const Navbar = async () => {
           <History user={session?.user} />
           <div className="flex flex-row gap-2 items-center">
             <Image
-              src="/images/gemini-logo.png"
+              src="/images/logo.png"
               height={20}
               width={20}
               alt="gemini logo"
