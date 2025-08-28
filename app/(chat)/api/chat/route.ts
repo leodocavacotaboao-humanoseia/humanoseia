@@ -1,7 +1,7 @@
 import { convertToCoreMessages, Message, streamText } from "ai";
 import { z } from "zod";
 
-import { geminiProModel } from "@/ai";
+import { geminiFlashModel, geminiProModel } from "@/ai";
 import {
   generateReservationPrice,
   generateSampleFlightSearchResults,
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   }
 
   const coreMessages = convertToCoreMessages(messages).filter(
-    (message) => message.content.length > 0,
+    (message) => message.content.length > 0
   );
 
   const result = await streamText({
@@ -185,7 +185,7 @@ segura**.
       
       `,
     messages: coreMessages,
-  
+
     onFinish: async ({ responseMessages }) => {
       if (session.user && session.user.id) {
         try {
