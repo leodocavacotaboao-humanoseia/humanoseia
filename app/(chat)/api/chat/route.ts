@@ -1,7 +1,7 @@
 import { convertToCoreMessages, Message, streamText } from "ai";
 import { z } from "zod";
 
-import { geminiProModel } from "@/ai";
+import { geminiFlashModel, geminiProModel } from "@/ai";
 import {
   generateReservationPrice,
   generateSampleFlightSearchResults,
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   );
 
   const result = await streamText({
-    model: geminiProModel,
+    model: geminiFlashModel,
     system: `\n
         
         - today's date is ${new Date().toLocaleDateString()}.
